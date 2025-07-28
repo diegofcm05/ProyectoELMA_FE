@@ -22,3 +22,106 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Build output
+build
+out
+
+# Coverage directory
+coverage
+
+# Dependency directories
+jspm_packages/
+
+# Misc
+*.tgz
+*.gz
+*.zip
+*.7z
+*.bak
+*.tmp
+*.temp
+
+# IDEs and editors
+*.iml
+*.ipr
+*.iws
+
+# Mac system files
+__MACOSX/
+
+# SASS cache
+.sass-cache
+
+# TypeScript cache
+*.tsbuildinfo
+
+# VSCode settings
+.vscode-test/
+
+# Storybook build
+storybook-static
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
+
+# Playwright
+test-results/
+playwright-report/
+
+# Next.js
+.next
+
+# Nuxt.js
+.nuxt
+
+# Vuepress
+.vuepress/dist
+
+# Parcel
+.cache
+
+# Firebase
+.firebase
+
+# Coverage reports
+coverage/
+
+# Local env files
+.local
+
+# npm package lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+*.bin
+
+# Snapshots
+*.snap
+
+# Logs
+*.log
+
+# ESLint cache
+.eslintcache
+
+# Prettier cache
+.prettiercache
