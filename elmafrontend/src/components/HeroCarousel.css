@@ -1,0 +1,40 @@
+.carousel-container {
+  position: relative;
+  margin-top: 80px;
+  height: 60vh;
+  width: 100%; /* que ocupe todo el ancho de la ventana */
+  overflow: hidden;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+
+.carousel-title {
+  font-size: 3rem;
+  font-family: 'CarmenSansExtraBold', sans-serif;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 30px;
+  border-radius: 12px;
+}
+
+.carousel .slide {
+  height: 100% !important;
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel .slide img {
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}

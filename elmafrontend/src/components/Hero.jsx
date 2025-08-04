@@ -1,11 +1,15 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
-import fondo from '/Images/fondohome.jpg';
+import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
+import fondo from '/Images/fondohome2.jpg';
+
 const Hero = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <Box
       sx={{
-        height: '60vh',
+        height: '100vh',
         backgroundImage: `url(${fondo})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -15,15 +19,46 @@ const Hero = () => {
         textAlign: 'center',
         color: '#ffffff',
         position: 'relative',
-        paddingTop: '85px',
+        paddingTop: { xs: '70px', sm: '85px' }, // Menor en pantallas pequeñas
+        px: 2,
       }}
     >
-      <Box sx={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: 4, width: '100%', borderRadius: 2 }}>
-        <Typography variant="h2" sx={{ fontFamily: 'CarmenSansExtraBold', mb: 2 }}>
+      <Box
+        sx={{
+          p: { xs: 2, sm: 4 },
+          width: '100%',
+          maxWidth: '1200px',
+          borderRadius: 2,
+        }}
+      >
+        <Typography
+          variant="h1"
+          sx={{
+            fontFamily: 'Amio',
+            mb: 2,
+            fontSize: {
+              xs: '4rem',
+              sm: '5rem',
+              md: '6rem',
+              lg: '7rem',
+            },
+          }}
+        >
           Agua Purificada ELMA
         </Typography>
-        <Typography variant="h5" sx={{ fontFamily: 'CarmenSansExtraBold' }}>
-          Empoderando el desarrollo local
+
+        <Typography
+          variant="h4"
+          sx={{
+            fontFamily: 'CarmenSansExtraBold',
+            fontSize: {
+              xs: '1.2rem',
+              sm: '1.5rem',
+              md: '2rem',
+            },
+          }}
+        >
+          La pureza que te mereces.
         </Typography>
       </Box>
     </Box>

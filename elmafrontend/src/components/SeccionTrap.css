@@ -1,0 +1,122 @@
+.seccion-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 60px;
+  color: white;
+  clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+  gap: 40px;
+  min-height: 70vh;
+  box-sizing: border-box;
+}
+
+.seccion-container.invertir {
+  flex-direction: row-reverse;
+}
+
+.seccion-container.invertir-diagonal {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
+}
+
+.seccion-container.final-testim {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.seccion-texto {
+  flex: 1;
+  font-family: 'CarmenSansExtraBold', sans-serif;
+}
+
+.seccion-texto h2 {
+  font-family: 'CarmenSansExtraBold', sans-serif;
+  font-size: 4.5vw;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.seccion-texto .cita {
+  font-size: 1.8vw;
+  margin-bottom: 10px;
+}
+
+
+.seccion-imagen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seccion-imagen img {
+  max-width: 70%;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.seccion-container.superpuesto {
+  margin-top: -58px; /* se solapa con el anterior */
+  padding-top: 104px; /* compensa para que el contenido no se corte */
+  position: relative;
+}
+
+.seccion-imagen img:hover {
+  transform: scale(1.05);
+}
+
+.seccion-titulo {
+  text-align: center;
+  padding: 60px 20px 60px;
+  background-color: white;
+}
+
+.seccion-titulo h1 {
+  font-family: 'Bulletto', cursive;
+  font-size: 5vw;
+  color: #044c94; /* o el color que prefieras */
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .seccion-container,
+  .seccion-container.invertir {
+    flex-direction: column;
+    padding: 90px 20px;
+    text-align: center;
+  }
+
+  .seccion-texto h2 {
+    font-size: 7vw;
+  }
+
+  .seccion-texto .cita {
+    font-size: 4vw;
+  }
+
+  .seccion-imagen img {
+    max-width: 90%; /* 🔽 la hacemos más responsiva */
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .seccion-container,
+  .seccion-container.invertir {
+    padding: 50px 30px;
+    gap: 30px;
+  }
+
+  .seccion-texto h2 {
+    font-size: 5vw;
+  }
+
+  .seccion-texto .cita {
+    font-size: 2.5vw;
+  }
+
+  .seccion-imagen img {
+    max-width: 80%;
+  }
+}
