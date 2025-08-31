@@ -14,7 +14,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import '/src/components/styles.css';
 
-import logo from '/Images/LogoELMA.png';
+import logo from '/Images/LogoELMA2.png';
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
