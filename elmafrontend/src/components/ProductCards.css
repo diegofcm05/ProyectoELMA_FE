@@ -1,0 +1,95 @@
+/* Overlay */
+.custom-modal-overlay {
+  position: fixed;
+  inset: 0; /* top:0 right:0 bottom:0 left:0 */
+  background: rgba(0, 0, 0, 0.48);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1400; /* por encima del contenido normal */
+}
+
+/* Modal box */
+.custom-modal {
+  background: #fff;
+  width: min(920px, 96%);
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+  position: relative;
+  padding: 18px;
+}
+
+/* Botón cerrar */
+.modal-close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  border: none;
+  background: transparent;
+  font-size: 26px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Layout interno: imagen | separador | contenido */
+.modal-inner {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* Media (imagen) */
+.modal-media {
+  flex: 0 0 42%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-media img {
+  width: 100%;
+  height: auto;
+  max-height: 72vh;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Divider vertical */
+.modal-divider {
+  width: 1px;
+  background: #e6e6e6;
+}
+
+/* Contenido textual */
+.modal-body {
+  flex: 1 1 58%;
+  padding: 2px 6px;
+  overflow: auto;
+}
+
+.modal-body h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+}
+
+/* Responsive: apilar en pantallas pequeñas */
+@media (max-width: 768px) {
+  .modal-inner {
+    flex-direction: column;
+  }
+  .modal-media {
+    flex-basis: auto;
+  }
+  .modal-divider {
+    display: none;
+  }
+  .modal-media img {
+    max-height: 40vh;
+  }
+  .custom-modal {
+    padding: 12px;
+  }
+}
