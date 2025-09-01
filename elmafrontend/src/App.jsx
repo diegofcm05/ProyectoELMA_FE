@@ -5,10 +5,12 @@ import Products from './pages/Products';
 import Contacto from './pages/Contacto';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop /> {/* Asegura que la página se desplace hacia arriba al cambiar de ruta */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -99,6 +99,7 @@ const Contacto = () => {
         sx={{
           background: "white",
           textAlign: "center",
+          p: 4,
         }}
       >
 
@@ -199,7 +200,7 @@ const Contacto = () => {
                 fullWidth
               />
               <Button type="submit" variant="contained" color="primary">
-                Submit
+                Enviar
               </Button>
             </Box>
           </Grid>

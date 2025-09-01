@@ -1,13 +1,11 @@
 import React from 'react';
-import HeroSection from '../components/HeroSection'; // ajusta ruta si es diferente
-import ProductCards from '../components/ProductCards'; // ajusta ruta si es diferente
-
+import HeroSection from '../components/HeroSection'; 
+import ProductCards from '../components/ProductCards'; 
 const Products = () => {
   return (
     <div>
       <HeroSection />
-      <ProductCards />
-      {/* Puedes seguir agregando más contenido abajo si lo deseas */}
+      <ProductCards/>
     </div>
   );
 };

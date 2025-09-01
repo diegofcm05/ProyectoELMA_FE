@@ -1,95 +1,208 @@
-/* Overlay */
-.custom-modal-overlay {
-  position: fixed;
-  inset: 0; /* top:0 right:0 bottom:0 left:0 */
-  background: rgba(0, 0, 0, 0.48);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1400; /* por encima del contenido normal */
+.products-section {
+  text-align: center;
+  padding: 40px 20px;
 }
 
-/* Modal box */
-.custom-modal {
+.section-title {
+  font-family: "CarmenSansExtraBold";
+  font-size: 4rem;
+  margin-bottom: 30px;
+  color: #2f4ccb
+}
+
+/* ===== GRID ===== */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 30px 25px;
+  justify-items: center;
+}
+
+/* Segunda fila de 2 centradas */
+.cards-container > .card:nth-child(5),
+.cards-container > .card:nth-child(6) {
+  justify-self: center;
+}
+
+/* ===== CARD ===== */
+.card {
   background: #fff;
-  width: min(920px, 96%);
-  max-height: 90vh;
-  overflow: auto;
-  border-radius: 10px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
-  position: relative;
-  padding: 18px;
-}
-
-/* Botón cerrar */
-.modal-close {
-  position: absolute;
-  right: 12px;
-  top: 8px;
-  border: none;
-  background: transparent;
-  font-size: 26px;
-  cursor: pointer;
-  line-height: 1;
-}
-
-/* Layout interno: imagen | separador | contenido */
-.modal-inner {
+  border-radius: 16px;
+  padding: 25px;
+  width: 100%;           /* se adapta al ancho de su celda */
+  max-width: 100%;      /* límite para que no explote de ancho */
+  text-align: center;
+  transition: transform 0.3s ease;
   display: flex;
-  gap: 16px;
-  align-items: stretch;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;     /* todas iguales en alto */
+}
+.card:hover {
+  transform: translateY(-10px);
 }
 
-/* Media (imagen) */
-.modal-media {
-  flex: 0 0 42%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-media img {
+.card-img {
+  position: absolute;   /* 🔹 ahora se montan una sobre otra */
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  max-height: 72vh;
+  height: 100%;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 12px;
+  transition: opacity 0.6s ease;
 }
 
-/* Divider vertical */
-.modal-divider {
-  width: 1px;
-  background: #e6e6e6;
+/* Contenedor de imágenes superpuestas */
+.card-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 360px;        /* 🔹 altura fija */
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-/* Contenido textual */
-.modal-body {
-  flex: 1 1 58%;
-  padding: 2px 6px;
-  overflow: auto;
+.card-title {
+  font-family: "CarmenSansExtraBold";
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  transition: transform 0.3s ease;
 }
 
-.modal-body h2 {
-  margin-top: 0;
-  margin-bottom: 8px;
-  font-size: 1.25rem;
+/* Imagen base siempre visible */
+.card-img.base {
+  opacity: 1;
+  z-index: 1;
 }
 
-/* Responsive: apilar en pantallas pequeñas */
+/* Imagen hover invisible al inicio */
+.card-img.hover {
+  opacity: 0;
+  z-index: 2;
+}
+
+/* Al hacer hover en la tarjeta → fade */
+.card:hover .card-img.hover {
+  opacity: 1;
+}
+
+.card:hover .card-img.base {
+  opacity: 0;
+}
+
+.card-title.hovered {
+  transform: translateY(-8px); /* 🔹 se sube el texto */
+}
+
+.card-btn {
+  background: #2f4ccb; /* azul oscuro */
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "CarmenSansBold";
+  font-size: 1.1rem;
+  transition: background 0.3s ease;
+}
+
+.card-btn:hover {
+  background: #1bc1f2; /* naranja */
+}
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding-top: 60px;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  max-width: 900px;
+  width: 90%;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-img img {
+  width: 100%;
+  border-radius: 12px;
+  max-width: 600px;
+}
+
+.modal-text {
+  text-align: left;
+  font-family: "CarmenSansBold";
+}
+
+.close-btn {
+  margin-top: 20px;
+  padding: 10px 18px;
+  background: #1bc1f2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: "CarmenSansBold";
+}
+
+.close-btn:hover {
+  background: #200d9d;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet: 2 columnas */
+@media (max-width: 1400px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards-container > .card:nth-child(5),
+  .cards-container > .card:nth-child(6) {
+    grid-column: auto;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards-container > .card:nth-child(5),
+  .cards-container > .card:nth-child(6) {
+    grid-column: auto;
+  }
+}
+
+/* Mobile: 1 columna */
 @media (max-width: 768px) {
-  .modal-inner {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
-  .modal-media {
-    flex-basis: auto;
-  }
-  .modal-divider {
-    display: none;
-  }
-  .modal-media img {
-    max-height: 40vh;
-  }
-  .custom-modal {
-    padding: 12px;
+
+  .modal-img img {
+    max-width: 100%;
   }
 }

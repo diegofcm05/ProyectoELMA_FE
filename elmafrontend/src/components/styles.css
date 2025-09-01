@@ -12,6 +12,41 @@
 }
 
 @font-face {
+  font-family: 'CarmenSansBold';
+  src: url('/fonts/CarmenSans-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CarmenSansHeavy';
+  src: url('/fonts/CarmenSans-Heavy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CarmenSansLight';
+  src: url('/fonts/CarmenSans-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CarmenSansMedium';
+  src: url('/fonts/CarmenSans-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CarmenSansSemiBold';
+  src: url('/fonts/CarmenSans-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Amio';
   src: url('/fonts/Amio Trial-Bold.otf') format('opentype');
   font-weight: normal;

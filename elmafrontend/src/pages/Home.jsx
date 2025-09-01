@@ -1,7 +1,9 @@
 
 import Hero from '../components/Hero';
 import HeroCarousel from '../components/HeroCarousel';
+import MissionSection from '../components/MissionSection';
 import SeccionTrap from '../components/SeccionTrap';
+
 const Home = () => {
   return (
     <div>
@@ -29,6 +31,7 @@ const Home = () => {
         invertirDiagonal={true}
         finalTest={true}
       />
+      <MissionSection/>
     </div>
   );
 };
